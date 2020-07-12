@@ -1,22 +1,23 @@
-int Boton1=2;
-int Boton2=3;
+int SUBIR=2;
+int BAJAR=3;
+int CONFIRMAR=4;
 bool activarABC=false;
-char *myStrings[] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-                    };
-char *ABC[27];//={"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+char *tecladoABC[] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+char opciones[20][19]= {{"dsa" },{"bolas"}};
 void setup()
 {
     Serial.begin(9600);
-    pinMode(Boton1, INPUT);
-    pinMode(Boton2, INPUT);
-    pinMode(4, OUTPUT);
+    pinMode(SUBIR, INPUT);
+    pinMode(BAJAR, INPUT);
+    pinMode(CONFIRMAR, INPUT);
     pinMode(5, OUTPUT);
+    pinMode(6, OUTPUT);
 }
 
 void loop()
 {
-
-      
+    CargarOpcion();
+    
     botonera();  
 
 }
@@ -24,7 +25,7 @@ void loop()
 void botonera()
 {
     int j=3;
-    if(digitalRead(Boton1)==HIGH)
+    if(digitalRead(SUBIR)==HIGH)
     {
       
         abc();
@@ -33,11 +34,15 @@ void botonera()
         digitalWrite(4,LOW);
     
     }
+   if(digitalRead(BAJAR)==HIGH)
+   {
+      
+   }
 
 }
 void abc(){
   for (int i = 0; i < 6; i++) {
-    Serial.println(myStrings[i]);
+    Serial.println(tecladoABC[i]);
     delay(500);
   }
   

@@ -1,0 +1,2 @@
+1: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+2: https://www.tutorialspoint.com/arduino/arduino_multi_dimensional_arrays.htm
