@@ -11,8 +11,8 @@ void setup()
     Serial.begin(9600);
     pinMode(SUBIR, INPUT);
     pinMode(BAJAR, INPUT);
-    pinMode(CONFIRMAR, INPUT);
-    pinMode(5, OUTPUT);
+    pinMode(ConfirmarLetra, INPUT);
+    pinMode(ConfirmarOpcion, INPUT);
     pinMode(6, OUTPUT);
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
@@ -37,9 +37,9 @@ void botonera()
       bajar();
         
    }
-   if(digitalRead(CONFIRMAR)==HIGH)
+   if(digitalRead(CONFIRMARLETRA)==HIGH)
    {
-    confirmar();
+    confirmarLetra();
     }
   if (tecla>27){           //Cuando la tecla llega a la "z" se reinicia y cuando llega a "cero", continua con la "z"
     tecla=0;
@@ -75,8 +75,8 @@ void bajar()
   
   }
 //__________________________________________________________________________________________________________________________________________________________________________________________
-void confirmar()
+void confirmarLetra()
 {
-        
+   opciones[][]={{},{}};
     
 }
