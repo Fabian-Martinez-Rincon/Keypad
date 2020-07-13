@@ -5,6 +5,7 @@ int CONFIRMAR=4;
 bool activarABC=false;
 char *tecladoABC[] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 char opciones[20][19]= {{"" },{""}};
+//__________________________________________________________________________________________________________________________________________________________________________________________
 void setup()
 {
     Serial.begin(9600);
@@ -14,61 +15,68 @@ void setup()
     pinMode(5, OUTPUT);
     pinMode(6, OUTPUT);
 }
-
+//__________________________________________________________________________________________________________________________________________________________________________________________
 void loop()
 {
-//    CargarOpcion();
+
     
     botonera();  
 
 }
-
+//__________________________________________________________________________________________________________________________________________________________________________________________
 void botonera()
 {
    
-    if(digitalRead(SUBIR)==HIGH)
+    if((digitalRead(SUBIR)==HIGH)&&(tecla<=27))
     {
-        
+        subir();
     
     }
-   if(digitalRead(BAJAR)==HIGH)
+   if((digitalRead(BAJAR)==HIGH)&&(tecla>=0))
    {
-      
+      bajar();
         
    }
    if(digitalRead(CONFIRMAR)==HIGH)
    {
-    
+    confirmar();
     }
-
+  if (tecla>27){           //Cuando la tecla llega a la "z" se reinicia y cuando llega a "cero", continua con la "z"
+    tecla=0;
+    }
+  if (tecla<0)
+  {
+    tecla=27;
+    }
 }
+//__________________________________________________________________________________________________________________________________________________________________________________________
 void subir()
 {
-tecla++;
-        Serial.println(tecladoABC[tecla]);
+
         
         digitalWrite(5, HIGH);
+        
+        Serial.println(tecladoABC[tecla]);
+        tecla++;
         delay(200);
         digitalWrite(5,LOW);
 }
+//__________________________________________________________________________________________________________________________________________________________________________________________
 void bajar()
 {
-  tecla--;
-        Serial.println(tecladoABC[tecla]);
+  
         digitalWrite(6, HIGH);
+        
+        Serial.println(tecladoABC[tecla]);
+        tecla--;
         delay(200);
         digitalWrite(6,LOW);
   
   
   }
-  void confirmar(){
+//__________________________________________________________________________________________________________________________________________________________________________________________
+void confirmar()
+{
+        
     
-    
-    }
-void abc(){
-  for (int i = 0; i < 6; i++) {
-    Serial.println(tecladoABC[i]);
-    delay(500);
-  }
-  
-  }
+}
