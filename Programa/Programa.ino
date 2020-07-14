@@ -19,6 +19,11 @@ void setup()
     pinMode(ConfirmarLetra, INPUT);
     pinMode(ConfirmarOpcion, INPUT);
     pinMode(6, OUTPUT);
+     Serial.println("Configuracion del teclado");
+     Serial.println("1. a  b  c  d  e  f  g  h  i ");
+     Serial.println("2. j  k  l  m  n  ñ  o  p  q ");
+     Serial.println("3. r  s  t  u  v  w  x  y  z ");
+     
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void loop()
@@ -61,7 +66,7 @@ void subir()
         
         digitalWrite(5, HIGH);
         
-        Serial.println(tecladoABC[tecla][opcion]);
+        Serial.print(tecladoABC[opcion][tecla]);
         tecla++;
         delay(200);
         digitalWrite(5,LOW);
@@ -72,7 +77,7 @@ void bajar()
   
         digitalWrite(6, HIGH);
         
-        Serial.println(tecladoABC[tecla][opcion]);
+        Serial.print(tecladoABC[opcion][tecla]);
         tecla--;
         delay(200);
         digitalWrite(6,LOW);
