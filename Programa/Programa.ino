@@ -1,9 +1,14 @@
+int ConfirmarOpcion=5;
+int ConfirmarLetra=4;
 int SUBIR=2;
 int BAJAR=3;
 int tecla=0;
-int CONFIRMAR=4;
+int opcion=0;
+
 bool activarABC=false;
-char *tecladoABC[] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+
+char *tecladoABC[3][9] = {  {"a", "b", "c", "d", "e", "f", "g", "h", "i"}, { "j", "k", "l", "m", "n", "ñ", "o", "p", "q"}, {"r", "s", "t", "u", "v", "w", "x", "y", "z"}  };
+//char *tecladoABC[3][9] ={{"a","b","c","d"},{""}};
 char opciones[20][19]= {{"" },{""}};
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void setup()
@@ -37,9 +42,9 @@ void botonera()
       bajar();
         
    }
-   if(digitalRead(CONFIRMARLETRA)==HIGH)
+   if(digitalRead(ConfirmarLetra)==HIGH)
    {
-    confirmarLetra();
+    FuncionLetra();
     }
   if (tecla>27){           //Cuando la tecla llega a la "z" se reinicia y cuando llega a "cero", continua con la "z"
     tecla=0;
@@ -56,7 +61,7 @@ void subir()
         
         digitalWrite(5, HIGH);
         
-        Serial.println(tecladoABC[tecla]);
+        Serial.println(tecladoABC[tecla][opcion]);
         tecla++;
         delay(200);
         digitalWrite(5,LOW);
@@ -67,7 +72,7 @@ void bajar()
   
         digitalWrite(6, HIGH);
         
-        Serial.println(tecladoABC[tecla]);
+        Serial.println(tecladoABC[tecla][opcion]);
         tecla--;
         delay(200);
         digitalWrite(6,LOW);
@@ -75,8 +80,8 @@ void bajar()
   
   }
 //__________________________________________________________________________________________________________________________________________________________________________________________
-void confirmarLetra()
+void FuncionLetra()
 {
-   opciones[][]={{},{}};
+   //opciones[][]={{},{}};
     
 }
