@@ -3,11 +3,11 @@ int ConfirmarLetra=4;
 int SUBIR=2;
 int BAJAR=3;
 int tecla=0;
-int opcion=0;
+int opcion=2;
 
 bool activarABC=false;
 
-char *tecladoABC[3][9] = {  {"a", "b", "c", "d", "e", "f", "g", "h", "i"}, { "j", "k", "l", "m", "n", "ñ", "o", "p", "q"}, {"r", "s", "t", "u", "v", "w", "x", "y", "z"}  };
+char *tecladoABC[27] = {  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"  };
 //char *tecladoABC[3][9] ={{"a","b","c","d"},{""}};
 char opciones[20][19]= {{"" },{""}};
 //__________________________________________________________________________________________________________________________________________________________________________________________
@@ -20,9 +20,9 @@ void setup()
     pinMode(ConfirmarOpcion, INPUT);
     pinMode(6, OUTPUT);
      Serial.println("Configuracion del teclado");
-     Serial.println("1. a  b  c  d  e  f  g  h  i ");
-     Serial.println("2. j  k  l  m  n  ñ  o  p  q ");
-     Serial.println("3. r  s  t  u  v  w  x  y  z ");
+     Serial.println(" a  b  c  d  e  f  g  h  i ");
+     Serial.println(" j  k  l  m  n  ñ  o  p  q ");
+     Serial.println(" r  s  t  u  v  w  x  y  z ");
      
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
@@ -30,19 +30,21 @@ void loop()
 {
 
     
-    botonera();  
+    botonera();
 
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
+
+
 void botonera()
 {
    
-    if((digitalRead(SUBIR)==HIGH)&&(tecla<=27))
+    if((digitalRead(SUBIR)==HIGH))
     {
         subir();
     
     }
-   if((digitalRead(BAJAR)==HIGH)&&(tecla>=0))
+   if((digitalRead(BAJAR)==HIGH))
    {
       bajar();
         
@@ -51,22 +53,20 @@ void botonera()
    {
     FuncionLetra();
     }
-  if (tecla>27){           //Cuando la tecla llega a la "z" se reinicia y cuando llega a "cero", continua con la "z"
+  if (tecla==27){
     tecla=0;
     }
-  if (tecla<0)
-  {
-    tecla=27;
+  if(tecla<0){
+    tecla=26;
     }
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void subir()
 {
 
-        
         digitalWrite(5, HIGH);
         
-        Serial.print(tecladoABC[opcion][tecla]);
+        Serial.print(tecladoABC[tecla]);
         tecla++;
         delay(200);
         digitalWrite(5,LOW);
@@ -77,7 +77,7 @@ void bajar()
   
         digitalWrite(6, HIGH);
         
-        Serial.print(tecladoABC[opcion][tecla]);
+        Serial.print(tecladoABC[tecla]);
         tecla--;
         delay(200);
         digitalWrite(6,LOW);
