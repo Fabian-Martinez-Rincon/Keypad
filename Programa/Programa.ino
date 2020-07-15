@@ -7,10 +7,10 @@ int opcion=2;
 int columna=0;
 bool activarABC=false;
 int confirmar=0;
-char letra="";
+char *letra="";
 char *tecladoABC[27] = {  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"  };
 //char *tecladoABC[3][9] ={{"a","b","c","d"},{""}};
-char opciones[20][19]= {{"" },{""}};
+char opciones[]= {""};
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void setup()
 {
@@ -20,10 +20,7 @@ void setup()
     pinMode(ConfirmarLetra, INPUT);
     pinMode(ConfirmarOpcion, INPUT);
     pinMode(6, OUTPUT);
-     Serial.println("Configuracion del teclado");
-     Serial.println(" a  b  c  d  e  f  g  h  i ");
-     Serial.println(" j  k  l  m  n  ñ  o  p  q ");
-     Serial.println(" r  s  t  u  v  w  x  y  z ");
+    
      
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
@@ -54,6 +51,10 @@ void botonera()
    {
     FuncionLetra();
     }
+   /*if(digitalRead(ConfirmarOpcion)==HIGH)
+   {
+       FuncionOpcion();
+   }*/
   if (tecla==27){
     tecla=0;
     }
@@ -66,10 +67,10 @@ void subir()
 {
 
         digitalWrite(5, HIGH);
-        
-        Serial.print(tecladoABC[tecla]);
-        tecla++;
         letra=tecladoABC[tecla];
+        Serial.print(letra);
+        tecla++;
+        
         delay(200);
         digitalWrite(5,LOW);
 }
@@ -90,9 +91,33 @@ void bajar()
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void FuncionLetra()
 {
-   opciones[columna][confirmar++]=tecladoABC[tecla];
-   
-   Serial.print(opciones[columna][confirmar++]);
-   
+   digitalWrite(7, HIGH);
+   opciones[confirmar++]=letra;
+   Serial.println("");
+   Serial.println("Letra confirmada:");
+   Serial.println(letra);
+   delay(200);
+   digitalWrite(7,LOW);
+   if(letra==4){
+    for ( int i=0;i<4;i++ ){
+      opciones[i];
+      Serial.println("Holas");
+      Serial.print(opciones[i]);
+      }
+      opciones[confirmar]=0;
+    }
     
 }
+void FuncionOpcion(){
+  
+       Serial.println("Su palabra se cuardo como:");
+       for(int i=0;i<4;i++){
+          opciones[i];
+          Serial.print(opciones[i]);
+          
+          }
+       
+  
+  
+  
+  }
