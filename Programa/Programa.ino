@@ -4,9 +4,10 @@ int SUBIR=2;
 int BAJAR=3;
 int tecla=0;
 int opcion=2;
-
+int columna=0;
 bool activarABC=false;
-
+int confirmar=0;
+char letra="";
 char *tecladoABC[27] = {  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"  };
 //char *tecladoABC[3][9] ={{"a","b","c","d"},{""}};
 char opciones[20][19]= {{"" },{""}};
@@ -68,6 +69,7 @@ void subir()
         
         Serial.print(tecladoABC[tecla]);
         tecla++;
+        letra=tecladoABC[tecla];
         delay(200);
         digitalWrite(5,LOW);
 }
@@ -76,9 +78,10 @@ void bajar()
 {
   
         digitalWrite(6, HIGH);
-        
-        Serial.print(tecladoABC[tecla]);
+        letra=tecladoABC[tecla];
+        Serial.print(letra);
         tecla--;
+        
         delay(200);
         digitalWrite(6,LOW);
   
@@ -87,6 +90,9 @@ void bajar()
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void FuncionLetra()
 {
-   //opciones[][]={{},{}};
+   opciones[columna][confirmar++]=tecladoABC[tecla];
+   
+   Serial.print(opciones[columna][confirmar++]);
+   
     
 }
