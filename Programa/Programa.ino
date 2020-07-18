@@ -7,10 +7,10 @@ int opcion=2;
 int columna=0;
 bool activarABC=false;
 int confirmar=0;
-char *letra="";
-char *tecladoABC[27] = {  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"  };
+char letra="";
+char *tecladoABC[27] = {  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
 //char *tecladoABC[3][9] ={{"a","b","c","d"},{""}};
-char opciones[]= {""};
+String opciones= "";
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void setup()
 {
@@ -51,10 +51,10 @@ void botonera()
    {
     FuncionLetra();
     }
-   /*if(digitalRead(ConfirmarOpcion)==HIGH)
+   if(digitalRead(ConfirmarOpcion)==HIGH)
    {
        FuncionOpcion();
-   }*/
+   }
   if (tecla==27){
     tecla=0;
     }
@@ -91,8 +91,10 @@ void bajar()
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void FuncionLetra()
 {
+
    digitalWrite(7, HIGH);
-   opciones[confirmar++]=letra;
+   //opciones[confirmar++]=letra;
+  opciones=opciones+letra;
    Serial.println("");
    Serial.println("Letra confirmada:");
    Serial.println(letra);
@@ -100,11 +102,11 @@ void FuncionLetra()
    digitalWrite(7,LOW);
    if(letra==4){
     for ( int i=0;i<4;i++ ){
-      opciones[i];
+      //opciones[i];
       Serial.println("Holas");
-      Serial.print(opciones[i]);
+      //Serial.print(opciones[i]);
       }
-      opciones[confirmar]=0;
+  //    opciones[confirmar]='';
     }
     
 }
