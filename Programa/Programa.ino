@@ -54,7 +54,12 @@ void botonera()
     }
    if(digitalRead(ConfirmarOpcion)==HIGH)
    {
-       FuncionOpcion();
+       for(int i=0;i<contador;i++)
+       {
+            opciones[i];
+      
+      Serial.print(opciones[i]);
+        }
    }
   if (tecla==27){
     tecla=0;
@@ -102,14 +107,8 @@ void FuncionLetra()
    contador++;
    delay(200);
    digitalWrite(7,LOW);
-   if(contador==4){
-    for ( int i=0;i<4;i++ ){
-      opciones[i];
-      Serial.println("Holas");
-      Serial.print(opciones[i]);
-      }
-  //    opciones[confirmar]='';
-    }
+   
+  
     
 }
 void FuncionOpcion(){
