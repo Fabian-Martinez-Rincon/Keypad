@@ -60,6 +60,8 @@ void botonera()
       
       Serial.print(opciones[i]);
         }
+       delay(200);
+        digitalWrite(5,LOW);
    }
   if (tecla==27){
     tecla=0;
