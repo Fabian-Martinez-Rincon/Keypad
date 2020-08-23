@@ -5,13 +5,13 @@ int ConfirmarLetra=4;
 
 
 int tecla=0;    //Para ver la posicion del arreglo tecladoABC
-int confirmar=0;
+//int confirmar=0;
 char letra="";
-int contador=0;
+int contador=0;// Cada vez que se sume una letra tenemos este contador para recorrer la cadena de texto
 String opciones= "";
 int contadorB=0;  //El contador que utilizo para medir el tiempo por palabra, en lugar de poner un "delay()"
 char *tecladoABC[27] = 
-{  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
+{  '_' ,'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
 
 
 //__________________________________________________________________________________________________________________________________________________________________________________________
