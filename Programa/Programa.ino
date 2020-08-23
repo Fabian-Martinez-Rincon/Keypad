@@ -1,17 +1,17 @@
-int ConfirmarOpcion=5;
-int ConfirmarLetra=4;
 int SUBIR=2;
 int BAJAR=3;
-int tecla=0;
-int opcion=2;
-int columna=0;
-bool activarABC=false;
+int ConfirmarOpcion=5;
+int ConfirmarLetra=4;
+
+
+int tecla=0;    //Para ver la posicion del arreglo tecladoABC
 int confirmar=0;
 char letra="";
 int contador=0;
 int contadorB=0;
-char *tecladoABC[27] = {  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
-//char *tecladoABC[3][9] ={{"a","b","c","d"},{""}};
+char *tecladoABC[27] = 
+{  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
+
 String opciones= "";
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void setup()
@@ -39,29 +39,21 @@ void loop()
 void botonera()
 {
     
-    if((digitalRead(SUBIR)==HIGH))
-    {  
-         contadorB++;
-         if(contadorB==1){
-          
-           subir();
-           
-           }
-         if(contadorB==10000){contadorB=0;}
-       
+              
+     subir();
+
     
-    }
-   if((digitalRead(BAJAR)==HIGH))
-   {
+   
       bajar();
         
-   }
+  
    if(digitalRead(ConfirmarLetra)==HIGH)
    {
     FuncionLetra();
     }
    if(digitalRead(ConfirmarOpcion)==HIGH)
    {
+        Serial.println("Su palabra es:");
        for(int i=0;i<contador;i++)
        {
             opciones[i];
@@ -84,22 +76,27 @@ void botonera()
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void subir()
 {
-
-      
-        letra=tecladoABC[tecla];
-        Serial.print(letra);
-        tecla++;
-        
-       
-        
-        
-       
-        
+    if((digitalRead(SUBIR)==HIGH))
+    {
+        contadorB++;
+        if(contadorB==1)
+        {
+            letra=tecladoABC[tecla];
+            Serial.print(letra);
+            tecla++;
+        }
+        if(contadorB==9000)
+        {
+            contadorB=0;
+        }
+     } //Este numero es 4000 ya que el contador al mantenerse apretado por un cierto periodo de tiempo se ejecuta varias veces y la ideas es que solo ejecute una letra a la vez, ya que el numero es mas chico, aparecerian mas de una letra en el display        
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void bajar()
-{
-  
+{   
+      
+        if((digitalRead(BAJAR)==HIGH))
+        {
         digitalWrite(6, HIGH);
         letra=tecladoABC[tecla];
         Serial.print(letra);
@@ -107,7 +104,7 @@ void bajar()
         
         delay(200);
         digitalWrite(6,LOW);
-  
+        }
   
   }
 //__________________________________________________________________________________________________________________________________________________________________________________________
@@ -123,20 +120,5 @@ void FuncionLetra()
    contador++;
    delay(200);
    digitalWrite(7,LOW);
-   
-  
-    
-}
-void FuncionOpcion(){
-  
-       Serial.println("Su palabra se cuardo como:");
-       for(int i=0;i<4;i++){
-          opciones[i];
-          Serial.print(opciones[i]);
-          
-          }
        
-  
-  
-  
-  }
+}
