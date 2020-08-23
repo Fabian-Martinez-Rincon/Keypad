@@ -21,7 +21,6 @@ void setup()
     pinMode(BAJAR, INPUT);
     pinMode(ConfirmarLetra, INPUT);
     pinMode(ConfirmarOpcion, INPUT);
-    pinMode(6, OUTPUT);
     
      
 }
@@ -41,14 +40,7 @@ void botonera()
     bajar();
     FuncionLetra();
     FuncionOpcion();
-    if (tecla==27)    //Cuando letra llega a el numero maximo del abcdario vuelve a empezar
-    {
-        tecla=0;
-    }
-    if(tecla<0)
-    {
-        tecla=26;
-    }
+    FuncionABC();
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void subir()
@@ -122,3 +114,16 @@ void FuncionOpcion()
     }
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
+void FuncionABC()
+{
+if (tecla==27)    //Cuando letra llega a el numero maximo del abcdario vuelve a empezar
+    {
+        tecla=0;
+    }
+    if(tecla<0)
+    {
+        tecla=26;
+    }  
+  
+  
+}
