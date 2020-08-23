@@ -9,6 +9,7 @@ bool activarABC=false;
 int confirmar=0;
 char letra="";
 int contador=0;
+int contadorB=0;
 char *tecladoABC[27] = {  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
 //char *tecladoABC[3][9] ={{"a","b","c","d"},{""}};
 String opciones= "";
@@ -37,10 +38,17 @@ void loop()
 
 void botonera()
 {
-   
+    
     if((digitalRead(SUBIR)==HIGH))
-    {
-        subir();
+    {  
+         contadorB++;
+         if(contadorB==1){
+          
+           subir();
+           
+           }
+         if(contadorB==10000){contadorB=0;}
+       
     
     }
    if((digitalRead(BAJAR)==HIGH))
@@ -77,13 +85,16 @@ void botonera()
 void subir()
 {
 
-        digitalWrite(5, HIGH);
+      
         letra=tecladoABC[tecla];
         Serial.print(letra);
         tecla++;
         
-        delay(200);
-        digitalWrite(5,LOW);
+       
+        
+        
+       
+        
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void bajar()
