@@ -8,11 +8,12 @@ int tecla=0;    //Para ver la posicion del arreglo tecladoABC
 int confirmar=0;
 char letra="";
 int contador=0;
+String opciones= "";
 int contadorB=0;  //El contador que utilizo para medir el tiempo por palabra, en lugar de poner un "delay()"
 char *tecladoABC[27] = 
 {  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
 
-String opciones= "";
+
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void setup()
 {
@@ -42,7 +43,7 @@ void botonera()
     FuncionABC();
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
-void subir()
+void subir()  //Bajo en el arreglo abc
 {
     if((digitalRead(SUBIR)==LOW))
     {
@@ -53,14 +54,14 @@ void subir()
             Serial.print(letra);
             tecla++;
         }
-        if(contadorB==10000)
+        if(contadorB==10000)     //Este numero es 4000 ya que el contador al mantenerse apretado por un cierto periodo de tiempo se ejecuta varias veces y la ideas es que solo ejecute una letra a la vez, ya que el numero es mas chico, aparecerian mas de una letra en el display        
         {
             contadorB=0;
         }
-     }        //Este numero es 4000 ya que el contador al mantenerse apretado por un cierto periodo de tiempo se ejecuta varias veces y la ideas es que solo ejecute una letra a la vez, ya que el numero es mas chico, aparecerian mas de una letra en el display        
+     }       
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
-void bajar()
+void bajar()    //Bajo en el arreglo abc
 {   
       
         if((digitalRead(BAJAR)==LOW))
@@ -80,7 +81,7 @@ void bajar()
   
   }
 //__________________________________________________________________________________________________________________________________________________________________________________________
-void FConfirmarLetra()
+void FConfirmarLetra() //Cargamos una letra y aumentamos en posicion de la cadena de texto 
 {
     if(digitalRead(ConfirmarLetra)==LOW)
     {
@@ -102,7 +103,7 @@ void FConfirmarLetra()
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 
-void FConfirmarOpcion()
+void FConfirmarOpcion()  //En cuando el pulsador se apague, se recorre el string opciones, utilizamos una variable contador para no usar el delay y una vez que termina, se reinicia
 {
     if(digitalRead(ConfirmarOpcion)==LOW)
     {
@@ -115,18 +116,20 @@ void FConfirmarOpcion()
                 opciones[i];
                 Serial.print(opciones[i]);
             }
+            opciones= "";
             Serial.println();
         }
         if(contadorB==10000)
         {
             contadorB=0;
-        }  
+        } 
+         
     }
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
-void FuncionABC()
+void FuncionABC()   //Cuando letra llega a el numero maximo del abcdario vuelve a empezar
 {
-if (tecla==27)    //Cuando letra llega a el numero maximo del abcdario vuelve a empezar
+if (tecla==27)   
     {
         tecla=0;
     }
