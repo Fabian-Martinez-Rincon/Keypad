@@ -54,7 +54,7 @@ void subir()  //Bajo en el arreglo abc
             Serial.print(letra);
             tecla++;
         }
-        if(contadorB==10000)     //Este numero es 4000 ya que el contador al mantenerse apretado por un cierto periodo de tiempo se ejecuta varias veces y la ideas es que solo ejecute una letra a la vez, ya que el numero es mas chico, aparecerian mas de una letra en el display        
+        if(contadorB==10000)     //Este numero es 10000 ya que el contador al mantenerse apretado por un cierto periodo de tiempo se ejecuta varias veces y la ideas es que solo ejecute una letra a la vez, ya que el numero es mas chico, aparecerian mas de una letra en el display        
         {
             contadorB=0;
         }
