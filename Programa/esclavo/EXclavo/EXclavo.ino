@@ -1,6 +1,6 @@
 #include <LiquidCrystal.h>
 
-LiquidCrystal lcd(12,11,10,9,8,7);
+LiquidCrystal lcd(7,6,5,4,3,2);
 int data3=11;
 int data1=12;
 int data2=13;

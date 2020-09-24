@@ -1,6 +1,5 @@
 
-#include<LiquidCrystal.h>
-LiquidCrystal lcd(2, 7, 8, 9, 10, 11);
+
 #include <EEPROM.h>
 #include "ssd1306.h"
 #include <Wire.h>
@@ -21,7 +20,10 @@ int contadorB=0;  //El contador que utilizo para medir el tiempo por palabra, en
 char *tecladoABC[27] = 
 {  '_' ,'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'  };
 
-
+int pin7=7;
+int pin8=8;
+int pin9=9;
+int pin10=10;
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void setup()
 {
@@ -30,36 +32,16 @@ void setup()
     pinMode(BAJAR, INPUT_PULLUP);
     pinMode(ConfirmarLetra, INPUT_PULLUP);
     pinMode(ConfirmarOpcion, INPUT_PULLUP);
-   lcd.begin(16,2);                           //Initilize LCD display
-  lcd.setCursor(0,0);                        //Sets Cursor at first line of Display 
-  lcd.print("Circuit Digest");               //Prints CIRCUIT DIGEST in LCD 
-  lcd.setCursor(0,1);                        //Sets Cursor at second line of Display
-  lcd.print("I2C 2 ARDUINO");                //Prints I2C ARDUINO in LCD
-  delay(5000);                               //Delay for 5 seconds
-  lcd.clear();                               //Clears LCD display
-  Serial.begin(9600);                        //Begins Serial Communication at 9600 baud rate
-  Wire.begin();                              //Begins I2C communication at pin (A4,A5)
+    pinMode(pin7, OUTPUT);
+    pinMode(pin8, OUTPUT);
+    pinMode(pin9, OUTPUT);
+    pinMode(pin10, OUTPUT);
+   
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void loop()
 {
-      Wire.requestFrom(8,1);                           // request 1 byte from slave arduino (8)
-    byte MasterReceive = Wire.read();                // receive a byte from the slave arduino and store in MasterReceive
-    int potvalue = analogRead(A0);                   // Reads analog value from POT (0-5V)
-    byte MasterSend = map(potvalue,0,1023,0,127);    //Convert digital value (0 to 1023) to (0 to 127)
      
-    Wire.beginTransmission(8);                       // start transmit to slave arduino (8)
-    Wire.write(MasterSend);                          // sends one byte converted POT value to slave
-    Wire.endTransmission();                          // stop transmitting
-    lcd.setCursor(0,0);                              //Sets Currsor at line one of LCD
-    lcd.print(">>  Master  <<");                     //Prints >> Master << at LCD
-    lcd.setCursor(0,1);                              //Sets Cursor at line two of LCD
-    lcd.print("SlaveVal:");                          //Prints SlaveVal: in LCD
-    lcd.print(MasterReceive);                        //Prints MasterReceive in LCD received from Slave
-    Serial.println("Master Received From Slave");    //Prints in Serial Monitor 
-    Serial.println(MasterReceive);
-    delay(500);                                     
-    lcd.clear();
     botonera();
 
 }
@@ -77,20 +59,20 @@ void botonera()
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void subir()  //Bajo en el arreglo abc
 {
-    if((digitalRead(SUBIR)==LOW))
-    {
-        contadorB++;
-        if(contadorB==1)
+          if((digitalRead(SUBIR)==LOW))
         {
-            letra=tecladoABC[tecla];
-            Serial.print(letra);
-            tecla++;
+            contadorB++;
+            if(contadorB==1)
+            {
+                letra=tecladoABC[tecla];
+                Serial.print(letra);
+                tecla++;  
+            }
+            if(contadorB==10000)
+            {
+                contadorB=0;
+            }
         }
-        if(contadorB==10000)     //Este numero es 10000 ya que el contador al mantenerse apretado por un cierto periodo de tiempo se ejecuta varias veces y la ideas es que solo ejecute una letra a la vez, ya que el numero es mas chico, aparecerian mas de una letra en el display        
-        {
-            contadorB=0;
-        }
-     }       
 }
 //__________________________________________________________________________________________________________________________________________________________________________________________
 void bajar()    //Bajo en el arreglo abc
