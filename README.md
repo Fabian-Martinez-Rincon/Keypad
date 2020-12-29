@@ -43,7 +43,7 @@ que no tiene que mostrar en caso de errores.
 En la “figura 11” se cambian los pulsadores pull down que estábamos utilizando por pulsadores pull up, ya que nos permitía utilizar las resistencias internas del
 Arduino y ahorrar en componentes (que en este caso no son necesarias) y el circuito queda mas compacto.
 
-### Circuito con pulsadores y pantalla serial.
+### Esquema de Pulsadores Pull Up.
 ![Diagrama General](Images/3.png)
 
 Para poder utilizar los pulsadores que tenemos en la “figura 11” necesitamos cambiar la configurar de los pines actuales, ya que estaban en configuración pull
@@ -51,5 +51,13 @@ down. Para cambiarlos tenemos que configurar los modos en los que Arduino lee lo
 Para que nosotros lo podamos utilizar, tenemos que tener los pines en el modo IPUT_PULLUP ya que nos permite tener 5v siempre a la salida.
 Agregamos los Modulo Bluetooth HC-06 y HC-05 (Como se muestra en la figura 5). En el caso de que solamente tengamos estos módulos en simulación tenemos que crear dos puertos virtuales para que proteus nos permita leer ambos módulos. Utilizamos el programa que se muestra en la “figura 13” para simular estos pines. (Las librerías que utilizamos para los módulos, las dejamos al final del informe).
 
-### Circuito con pulsadores y pantalla serial.
+### Simulador de pines.
 ![bloque](Images/4.png)
+
+Una vez que terminamos de armar el código y de poder configurar todos los pines necesarios para poder utilizar los módulos bluetooh en proteus, acomodamos las conexiones tanto de los pulsadores, como de los módulos para poder utilizarlo desde ambas pantallas serial. En la “figura 14” tenemos tanto el receptor como el emisor. Y en la “figura 15” tenemos una imagen que nos muestra como es el funcionamiento en ambas pantallas serial.
+
+## Circuito con pulsadores imprementados.
+![bloque](Images/5.png)
+
+## Circuito con puertos serial en simulación.
+![bloque](Images/6.png)
