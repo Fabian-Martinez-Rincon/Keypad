@@ -53,12 +53,5 @@ down. Para cambiarlos tenemos que configurar los modos en los que Arduino
 lee los pines (como se muestra en la figura 12), tanto de entrada como de salida.
 Para que nosotros lo podamos utilizar, tenemos que tener los pines en el modo
 IPUT_PULLUP ya que nos permite tener 5v siempre a la salida.
-
-
-Agregamos los Modulo Bluetooth HC-06 y HC-05 (Como se muestra en la figura
-5). En el caso de que solamente tengamos estos módulos en simulación tenemos
-que crear dos puertos virtuales para que proteus nos permita leer ambos
-módulos. Utilizamos el programa que se muestra en la “figura 13” para simular
-estos pines. (Las librerías que utilizamos para los módulos, las dejamos al final
-del informe)
-![Diagrama General](Images/4.png)
+Agregamos los Modulo Bluetooth HC-06 y HC-05 (Como se muestra en la figura 5). En el caso de que solamente tengamos estos módulos en simulación tenemos que crear dos puertos virtuales para que proteus nos permita leer ambos módulos. Utilizamos el programa que se muestra en la “figura 13” para simular estos pines. (Las librerías que utilizamos para los módulos, las dejamos al final del informe).
+![bloque](Images/4.png)
