@@ -93,4 +93,4 @@ muestra en las “figuras 18 y 19”
 Tuvimos que utilizar un Jumper ya que no se nos presento otra forma de completarlo.
 
 ## Diagrama de flujo Arduino esclavo.
-![bloque](Images/10.png)
+![bloque](Images/diagrama3.png)
