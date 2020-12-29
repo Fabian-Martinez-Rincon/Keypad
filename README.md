@@ -61,3 +61,36 @@ Una vez que terminamos de armar el código y de poder configurar todos los pines
 
 ## Circuito con puertos serial en simulación.
 ![bloque](Images/6.png)
+
+
+En la “figura 15” imagen tenemos al circuito funcionando y mostrando como se vería en el seria al enviarse una palabra completa. Utilizamos el guion como
+símbolo de “espacio”. Una vez que se envía la palabra se reinicia. En la “figura 16” se muestra el que código del pulsador “BAJAR”, en lugar de
+usar un “delay ()” que es una función bloqueante, utilizamos un contador, el numero en contadorB es 10000 ya que el pulsador iba mas lento que el recorrido
+del mismo y volvía a ejecutar otra letra. Es por eso que ese es el valor mínimo.
+
+## Configuración de Pulsadores.
+![bloque](Images/7.png)
+
+### Arduino Maestro
+Por parte del circuito del Arduino maestro, en la “figura 16“se muestra como quedo luego de ingresar el oled que utilizaremos como interfaz y menú para el
+cliente. En el lcd que se muestra en la “figura 16” se muestra la interfaz y a medida que nosotros pulsamos los interruptores, podemos movernos entre las opciones del menú que hemos cargado con anterioridad.
+
+## Ensamble completo del Arduino maestro.
+![bloque](Images/8nose.png)
+
+## Circuito Impreso Arduino maestro.
+![bloque](Images/8.png)
+
+Tenemos el circuito impreso mostrado en la figura 17 en caso de que vayamos a montarlo o que mandemos a hacer la plaqueta pcb. También hicimos el modelaje de la plaqueta en 3D para que el usuario que arme el circuito tenga una visión mas amplia de como quedaría una vez completado. Tal y como se
+muestra en las “figuras 18 y 19”
+
+## Parte trasera de la placa.
+![bloque](Images/9.png)
+
+## Parte delantera de la placa.
+![bloque](Images/10.png)
+
+Tuvimos que utilizar un Jumper ya que no se nos presento otra forma de completarlo.
+
+## Diagrama de flujo Arduino esclavo.
+![bloque](Images/10.png)
