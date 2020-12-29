@@ -13,3 +13,11 @@ Vamos a realizar una botonera en el cual mediante dos teclas nos permite subir y
 - Modulo Bluetooh HC - 05 (1)
 - Transformador de 5v (2)
 - Buzzer (1)
+
+## Diagrama General
+
+![Diagrama General](Images/diagrama.png)
+
+## Diagrama Botonera
+
+![Diagrama General](Images/diagrama2.png)
