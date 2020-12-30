@@ -117,4 +117,21 @@ Para tener una visión de cómo quedaría el circuito ya montado, procedemos a m
 ## Impreso delantero.
 ![bloque](Images/32d.png)
 
+## Simulación en Proteus
+
+En la figura “figura 25” tenemos imágenes de lo que es la simulación en proteus por parte del Arduino esclavo y en la figura 12.1 tenemos otra imagen de la simulación, pero en esta ya se eligió la opción de confirmar la opción demandada.
+
+### Oled Confirmando Opción
+![bloque](Images/11.png)
+
+Lo primero que hacer es guardar la opción 1 ya que tenemos un array en el que vamos guardando las palabras que vamos escribiendo. Si ingresamos otra vez
+a nuestro circuito, ya tendríamos las opciones cargadas por la eeprom. Cuando cargamos las opciones, nos quedaría de la forma en la que se encuentra en la
+imagen de la “figura 26"
+
+### Oled eligiendo slot
+![bloque](Images/12.png)
+
+### Terminales del Emisor y Reseptor
+![bloque](Images/13.png)
+
 
