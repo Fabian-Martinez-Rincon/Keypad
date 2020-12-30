@@ -1,10 +1,10 @@
-# Practicas-Botonera
-## Introducción
+# Practicas-Botonera.
+## Introducción.
 En este informe se mostrará y describirá todo lo cumplido por el alumno Fabian Martinez Rincon de la Escuela Técnica numero 6 Albert Thomas, en el sector Arduino.
 Durante el periodo de prácticas aprenderemos el uso y funciones de las herramientas y módulos que nos brinda Arduino y como aprovecharlas a lo largo de nuestros proyectos.
 Vamos a realizar una botonera en el cual mediante dos teclas nos permite subir y bajar en un abecedario y poder elegir letra por letra hasta enviar una frase por bluetooh a nuestro receptor que se encuentra en el lugar deseado por el usuario.En este informe se mostrará y describirá todo lo cumplido por el alumno Fabian Martinez Rincon de la Escuela Técnica numero 6 Albert Thomas, en el sector Arduino. Durante el periodo de prácticas aprenderemos el uso y funciones de las herramientas y módulos que nos brinda Arduino y como aprovecharlas a lo largo de nuestros proyectos. Vamos a realizar una botonera en el cual mediante dos teclas nos permite subir y bajar en un abecedario y poder elegir letra por letra hasta enviar una frase por bluetooh a nuestro receptor que se encuentra en el lugar deseado por el usuario.
 
-## Materiales
+## Materiales.
 - Arduino UNO (2)
 - LCD OLED I2C 128 x 64 (1)
 - LCD 16 x 2 SPI (1)
@@ -13,12 +13,12 @@ Vamos a realizar una botonera en el cual mediante dos teclas nos permite subir y
 - Modulo Bluetooh HC - 05 (1)
 - Transformador de 5v (2)
 - Buzzer (1)
-#### Cuadro 1:1 Tabla de componentes
+#### Cuadro 1:1 Tabla de componentes.
 
-### Diagrama General
+### Diagrama General.
 ![Diagrama General](Images/diagrama.png)
 
-### Diagrama Botonera
+### Diagrama Botonera.
 
 ![Diagrama General](Images/diagrama2.png)
 
@@ -95,7 +95,7 @@ Tuvimos que utilizar un Jumper ya que no se nos presento otra forma de completar
 ## Diagrama de flujo Arduino esclavo.
 ![bloque](Images/diagrama3.png)
 
-### Arduino Esclavo
+### Arduino Esclavo.
 Una vez que tenemos el maestro procedemos a instalar y programar el Arduino esclavo, como se muestra en la “figura 21”, este mismo nos servirá como un
 receptor por el que el Arduino maestro mande una palabra escrita por el usuario y muestre en el lcd que tengamos conectado este mismo Arduino y que pueda
 alertar de que llego una frase.
@@ -108,7 +108,7 @@ El circuito impreso de Arduino esclavo se muestra en la imagen de la “figura 2
 ## Circuito impreso Arduino Esclavo.
 ![bloque](Images/me.png)
 
-### Circuito impreso en 3d del Arduino esclavo
+### Circuito impreso en 3d del Arduino esclavo.
 Para tener una visión de cómo quedaría el circuito ya montado, procedemos a mostrar el circuito en 3d tal y como se muestra en las imágenes de la “figura 23” y ”24”.
 
 ## Impreso trasero.
@@ -117,21 +117,50 @@ Para tener una visión de cómo quedaría el circuito ya montado, procedemos a m
 ## Impreso delantero.
 ![bloque](Images/32d.png)
 
-## Simulación en Proteus
+## Simulación en Proteus.
 
 En la figura “figura 25” tenemos imágenes de lo que es la simulación en proteus por parte del Arduino esclavo y en la figura 12.1 tenemos otra imagen de la simulación, pero en esta ya se eligió la opción de confirmar la opción demandada.
 
-### Oled Confirmando Opción
+### Oled Confirmando Opción.
 ![bloque](Images/11.png)
 
 Lo primero que hacer es guardar la opción 1 ya que tenemos un array en el que vamos guardando las palabras que vamos escribiendo. Si ingresamos otra vez
 a nuestro circuito, ya tendríamos las opciones cargadas por la eeprom. Cuando cargamos las opciones, nos quedaría de la forma en la que se encuentra en la
 imagen de la “figura 26"
 
-### Oled eligiendo slot
+### Oled eligiendo slot.
 ![bloque](Images/12.png)
 
-### Terminales del Emisor y Reseptor
+Acá, independientemente de la opción que se elija, ya la podemos mostrar tanto por el display como por el serial de cómo se muestra en las imágenes de la “figura 27” y “figura 28
+
+## Terminales del Emisor y Receptor.
 ![bloque](Images/13.png)
+
+En la “figura 29” se muestra cómo se vería el mensaje enviado a través del Arduino maestro en el Arduino esclavo
+
+## LCD Receptor.
+![bloque](Images/15popo.png)
+
+Una vez terminado el display del Arduino esclavo como se muestra en la “figura 29“procedemos a conectar en el Arduino maestro el display principal, con este mismo controlaremos el menú principal en donde nuestro cliente podrá insertar las opciones y luego guardarlas, con una interfaz en la que muestra el nombre del colegio. El esquema final sería el que se muestra en la “figura 30
+
+## Ensamblaje Final del Proyecto.
+![bloque](Images/16.png)
+
+### Conclusión
+En la primera parte del trabajo nos dedicamos al armado básico del Arduino
+maestro (Los pulsadores más los monitores serial), en este mismo programamos
+para que el cliente pueda ingresar palabras a su comodidad y mandarlas al menú
+principal. Por parte del receptor, tenemos un Arduino esclavo el cual se encarga
+de cargar la frase que fue cargada por el Arduino maestro y mandarla al segundo
+display de 16x2, en este mismo se mostrara el mensaje enviado por el cliente.
+Al finalizar el proyecto, pudimos terminar con todos los objetivos planteados ya
+que cumple con todos los requerimientos necesarios, para el funcionamiento
+básico del circuito.
+
+### Mejoras
+- Hacer una api para controlar los pulsadores
+- Aumentar la velocidad de lectura de teclas
+- Pulir la interfaz de usuario
+- Tener alimentación para ambos Arduinos
 
 
