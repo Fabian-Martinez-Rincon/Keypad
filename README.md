@@ -94,3 +94,11 @@ Tuvimos que utilizar un Jumper ya que no se nos presento otra forma de completar
 
 ## Diagrama de flujo Arduino esclavo.
 ![bloque](Images/diagrama3.png)
+
+### Arduino Esclavo
+Una vez que tenemos el maestro procedemos a instalar y programar el Arduino esclavo, como se muestra en la “figura 21”, este mismo nos servirá como un
+receptor por el que el Arduino maestro mande una palabra escrita por el usuario y muestre en el lcd que tengamos conectado este mismo Arduino y que pueda
+alertar de que llego una frase.
+
+## Ensamble del Arduino esclavo.
+![bloque](Images/diagrama3.png)
