@@ -101,4 +101,20 @@ receptor por el que el Arduino maestro mande una palabra escrita por el usuario 
 alertar de que llego una frase.
 
 ## Ensamble del Arduino esclavo.
-![bloque](Images/diagrama3.png)
+![bloque](Images/nueva.png)
+
+El circuito impreso de Arduino esclavo se muestra en la imagen de la “figura 22”, tenemos tanto el Arduino como el display de 16x2.
+
+## Circuito impreso Arduino Esclavo.
+![bloque](Images/me.png)
+
+### Circuito impreso en 3d del Arduino esclavo
+Para tener una visión de cómo quedaría el circuito ya montado, procedemos a mostrar el circuito en 3d tal y como se muestra en las imágenes de la “figura 23” y ”24”.
+
+## Impreso trasero.
+![bloque](Images/3d.png)
+
+## Impreso delantero.
+![bloque](Images/32d.png)
+
+
