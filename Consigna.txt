@@ -1,5 +1,0 @@
-hacer un teclado que suba y baje con dos teclas en el abcedario y que cuando elegis una letra, que oprimiento otro boton para confirmar se almacene en un arreglo bidimencional.
-
-
-hacer un teclado con voz,
-hacer que el abcdario se divida en 4 partes y que tenga si o no
