@@ -22,13 +22,13 @@ Vamos a realizar una botonera en el cual mediante dos teclas nos permite subir y
 
 ![](Images/diagrama2.png)
 
-## Desarrollo
-Al principio programamos los pulsadores para que mande una palabra escrita por el usuario al puerto serial. Para esto el usuario tiene que navegar por el array
-abc a través de los pulsadores letra por letra hasta encontrar la que el desea y cuando termine poder enviarla. El maestro que será el encargado de mandar por
-puerto serial estos datos, para que, al momento de ingresar el botón de “terminar palabra”, solo se mande la palabra cargada. Tal y como se muestra en la “figura
-10”.
+## Progress
+At the beginning we program the push buttons to send a word written by the user to the serial port. For this the user has to navigate through the array
+abc through the letter by letter pushbuttons until you find the one you want and when you finish sending it. The teacher who will be in charge of sending for
+serial port this data, so that, when entering the "finish word" button, only the loaded word is sent. As shown in “figure
+10 ".
 
-### Circuito con pulsadores y pantalla serial.
+### Circuit with push buttons and serial display.
 ![Diagrama General](Images/1.png)
 
 Una vez tenemos el circuito que se muestra en la “figura 9”, para comprobar que funciona, ingresamos cierta cantidad de letras para estar al tanto del
@@ -37,7 +37,7 @@ En este caso utilizamos el serial para comprobar de que no tenemos errores en el
 en encontrar el error que si solo utilizamos el puerto serial. A demás, mas adelante nos ayudara ya que sabemos que tiene que mostrar por el display y
 que no tiene que mostrar en caso de errores.
 
-### Pantalla serial.
+### Serial display.
 ![Diagrama General](Images/2.png)
 
 En la “figura 11” se cambian los pulsadores pull down que estábamos utilizando por pulsadores pull up, ya que nos permitía utilizar las resistencias internas del
