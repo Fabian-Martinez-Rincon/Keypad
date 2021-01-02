@@ -1,8 +1,13 @@
 # Keypad.
 ## Introduction.
-This report will show and describe everything accomplished by the student Fabian Martinez Rincon from Technical School number 6 Albert Thomas, in the Arduino sector.
-During the internship period we will learn the use and functions of the tools and modules that Arduino offers us and how to take advantage of them throughout our projects.
-Vamos a realizar una botonera en el cual mediante dos teclas nos permite subir y bajar en un abecedario y poder elegir letra por letra hasta enviar una frase por bluetooh a nuestro receptor que se encuentra en el lugar deseado por el usuario.En este informe se mostrará y describirá todo lo cumplido por el alumno Fabian Martinez Rincon de la Escuela Técnica numero 6 Albert Thomas, en el sector Arduino. Durante el periodo de prácticas aprenderemos el uso y funciones de las herramientas y módulos que nos brinda Arduino y como aprovecharlas a lo largo de nuestros proyectos. Vamos a realizar una botonera en el cual mediante dos teclas nos permite subir y bajar en un abecedario y poder elegir letra por letra hasta enviar una frase por bluetooh a nuestro receptor que se encuentra en el lugar deseado por el usuario.
+This report will show and describe everything accomplished by the student Fabian
+Martinez Rincon from the Albert Thomas Technical School number 6, in the sector
+Arduino. During the internship period we will learn the use and functions of the
+tools and modules that Arduino gives us and how to take advantage of them throughout
+of our projects. We are going to make a keypad in which by means of two
+keys allows us to go up and down in an alphabet and to be able to choose letter by letter
+until sending a phrase by bluetooh to our receiver that is in the
+place desired by the user.
 
 ## Components.
 - Arduino UNO (2)
