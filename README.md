@@ -48,8 +48,8 @@ Arduino and save on components (which in this case are not necessary) and the ci
 ### Diagram pushbutton Pull Up.
 ![Diagrama General](Images/3.png)
 
-Para poder utilizar los pulsadores  necesitamos cambiar la configurar de los pines actuales, ya que estaban en configuración pull
-down. Para cambiarlos tenemos que configurar los modos en los que Arduino lee los pines , tanto de entrada como de salida.
+In order to use the buttons we need to change the configuration of the current pins, since they were in pull configuration
+down. To change them we have to configure the modes in which Arduino reads the pins, both input and output.
 Para que nosotros lo podamos utilizar, tenemos que tener los pines en el modo IPUT_PULLUP ya que nos permite tener 5v siempre a la salida.
 Agregamos los Modulo Bluetooth HC-06 y HC-05 (Como se muestra en la figura 5). En el caso de que solamente tengamos estos módulos en simulación tenemos que crear dos puertos virtuales para que proteus nos permita leer ambos módulos. Utilizamos el programa para simular estos pines. (Las librerías que utilizamos para los módulos, las dejamos al final del informe).
 
