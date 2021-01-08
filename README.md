@@ -81,85 +81,84 @@ client. The interface is displayed on the LCD and as we press the switches, we c
 ## Master Arduino Printed Circuit.
 ![bloque](Images/8.png)
 
-Tenemos el circuito impreso en caso de que vayamos a montarlo o que mandemos a hacer la plaqueta pcb. También hicimos el modelaje de la plaqueta en 3D para que el usuario que arme el circuito tenga una visión mas amplia de como quedaría una vez completado. 
+We have the printed circuit in case we are going to mount it or send the pcb board to be made. We also modeled the board in 3D so that the user who builds the circuit has a broader view of how it would look once completed.
 
-## Parte trasera de la placa.
+## Back of the plate.
 ![bloque](Images/9.png)
 
-## Parte delantera de la placa.
+## Front of the plate.
 ![bloque](Images/10.png)
 
-Tuvimos que utilizar un Jumper ya que no se nos presento otra forma de completarlo.
+We had to use a Jumper since we were not presented with another way to complete it.
 
-## Diagrama de flujo Arduino esclavo.
+## Arduino slave flow chart.
 ![bloque](Images/diagrama3.png)
 
-### Arduino Esclavo.
-Una vez que tenemos el maestro procedemos a instalar y programar el Arduino esclavo, este mismo nos servirá como un
-receptor por el que el Arduino maestro mande una palabra escrita por el usuario y muestre en el lcd que tengamos conectado este mismo Arduino y que pueda
-alertar de que llego una frase.
+### Arduino Slave.
+Once we have the master we proceed to install and program the slave Arduino, it will serve as a
+receiver through which the master Arduino sends a word written by the user and shows on the lcd that we have this same Arduino connected and that it can
+alert that a phrase arrived.
 
-## Ensamble del Arduino esclavo.
+## Assemble the slave Arduino.
 ![bloque](Images/nueva.png)
 
-El circuito impreso de Arduino esclavo se muestra en la imagen, tenemos tanto el Arduino como el display de 16x2.
+The Arduino slave PCB is shown in the image, we have both the Arduino and the 16x2 display.
 
-## Circuito impreso Arduino Esclavo.
+## Arduino Slave PCB.
 ![bloque](Images/me.png)
 
-### Circuito impreso en 3d del Arduino esclavo.
-Para tener una visión de cómo quedaría el circuito ya montado, procedemos a mostrar el circuito en 3d..
+### 3d printed circuit of the Arduino slave.
+To have a vision of how the circuit would be already assembled, we proceed to show the circuit in 3d.
 
-## Impreso trasero.
+## printed back
 ![bloque](Images/3d.png)
 
-## Impreso delantero.
+## front printed
 ![bloque](Images/32d.png)
 
-## Simulación en Proteus.
+## Simulation Proteus.
 
-Tenemos imágenes de lo que es la simulación en proteus por parte del Arduino esclavo y en la figura 12.1 tenemos otra imagen de la simulación, pero en esta ya se eligió la opción de confirmar la opción demandada.
+We have images of what is the simulation in proteus by the Arduino slave, but in this one the option to confirm the requested option was already chosen.
 
-### Oled Confirmando Opción.
+### Oled confirming option
 ![bloque](Images/11.png)
 
-Lo primero que hacer es guardar la opción 1 ya que tenemos un array en el que vamos guardando las palabras que vamos escribiendo. Si ingresamos otra vez
-a nuestro circuito, ya tendríamos las opciones cargadas por la eeprom. Cuando cargamos las opciones, nos quedaría de la forma en la que se encuentra en la
-imagen de la “figura 26"
+The first thing to do is save option 1 since we have an array in which we are saving the words that we are writing. If we enter again
+to our circuit, we would already have the options loaded by the eeprom. When we load the options.
 
-### Oled eligiendo slot.
+### Oled selec slot.
 ![bloque](Images/12.png)
 
-Acá, independientemente de la opción que se elija, ya la podemos mostrar tanto por el display como por el serial de cómo se muestra en las imágenes de la “figura 27” y “figura 28
+Here, regardless of the option chosen, we can already show it both through the display and through the serial.
 
-## Terminales del Emisor y Receptor.
+## Emitter and Receiver Terminals.
 ![bloque](Images/13.png)
 
-En la “figura 29” se muestra cómo se vería el mensaje enviado a través del Arduino maestro en el Arduino esclavo
+It shows how the message sent through the master Arduino would look on the slave Arduino
 
 ## LCD Receptor.
 ![bloque](Images/15popo.png)
 
-Una vez terminado el display del Arduino esclavo como se muestra en la “figura 29“procedemos a conectar en el Arduino maestro el display principal, con este mismo controlaremos el menú principal en donde nuestro cliente podrá insertar las opciones y luego guardarlas, con una interfaz en la que muestra el nombre del colegio. El esquema final sería el que se muestra en la “figura 30
+Once the display of the slave Arduino is finished, we proceed to connect the main display to the master Arduino, with this we will control the main menu where our client can insert the options and then save them, with an interface that shows the name of the school .
 
-## Ensamblaje Final del Proyecto.
+## Final Assembly of the Project.
 ![bloque](Images/16.png)
 
-### Conclusión
-En la primera parte del trabajo nos dedicamos al armado básico del Arduino
-maestro (Los pulsadores más los monitores serial), en este mismo programamos
-para que el cliente pueda ingresar palabras a su comodidad y mandarlas al menú
-principal. Por parte del receptor, tenemos un Arduino esclavo el cual se encarga
-de cargar la frase que fue cargada por el Arduino maestro y mandarla al segundo
-display de 16x2, en este mismo se mostrara el mensaje enviado por el cliente.
-Al finalizar el proyecto, pudimos terminar con todos los objetivos planteados ya
-que cumple con todos los requerimientos necesarios, para el funcionamiento
-básico del circuito.
+### Conclusion
+In the first part of the work we dedicated ourselves to the basic assembly of the Arduino
+master (the buttons plus the serial monitors), in this same we program
+so that the customer can enter words at his convenience and send them to the menu
+principal. On the receiver side, we have a slave Arduino which is in charge
+to load the phrase that was loaded by the master Arduino and send it to the second
+16x2 display, this will show the message sent by the client.
+At the end of the project, we were able to finish with all the objectives already set
+that meets all the necessary requirements, for the operation
+basic circuit.
 
-### Mejoras
-- Hacer una api para controlar los pulsadores
-- Aumentar la velocidad de lectura de teclas
-- Pulir la interfaz de usuario
-- Tener alimentación para ambos Arduinos
+### Upgrades
+- Make an api to control the buttons
+- Increase key reading speed
+- Polishing the user interface
+- Have power for both Arduinos
 
 
