@@ -50,8 +50,8 @@ Arduino and save on components (which in this case are not necessary) and the ci
 
 In order to use the buttons we need to change the configuration of the current pins, since they were in pull configuration
 down. To change them we have to configure the modes in which Arduino reads the pins, both input and output.
-Para que nosotros lo podamos utilizar, tenemos que tener los pines en el modo IPUT_PULLUP ya que nos permite tener 5v siempre a la salida.
-Agregamos los Modulo Bluetooth HC-06 y HC-05 (Como se muestra en la figura 5). En el caso de que solamente tengamos estos módulos en simulación tenemos que crear dos puertos virtuales para que proteus nos permita leer ambos módulos. Utilizamos el programa para simular estos pines. (Las librerías que utilizamos para los módulos, las dejamos al final del informe).
+In order for us to use it, we have to have the pins in the IPUT_PULLUP mode since it allows us to always have 5v at the output.
+We add the HC-06 and HC-05 Bluetooth Module. In the case that we only have these modules in simulation we have to create two virtual ports so that proteus allows us to read both modules. We use the program to simulate these pins. (The libraries that we use for the modules, we leave them at the end of the report).
 
 ### Simulador de pines.
 ![bloque](Images/4.png)
