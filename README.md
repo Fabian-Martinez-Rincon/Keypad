@@ -53,34 +53,32 @@ down. To change them we have to configure the modes in which Arduino reads the p
 In order for us to use it, we have to have the pins in the IPUT_PULLUP mode since it allows us to always have 5v at the output.
 We add the HC-06 and HC-05 Bluetooth Module. In the case that we only have these modules in simulation we have to create two virtual ports so that proteus allows us to read both modules. We use the program to simulate these pins. (The libraries that we use for the modules, we leave them at the end of the report).
 
-### Simulador de pines.
+### Pins simulator.
 ![bloque](Images/4.png)
 
-Una vez que terminamos de armar el código y de poder configurar todos los pines necesarios para poder utilizar los módulos bluetooh en proteus, acomodamos las conexiones tanto de los pulsadores, como de los módulos para poder utilizarlo desde ambas pantallas serial. Tenemos tanto el receptor como el emisor. Y en la “figura 15” tenemos una imagen que nos muestra como es el funcionamiento en ambas pantallas serial.
+Once we have finished assembling the code and being able to configure all the necessary pins to be able to use the bluetooh modules in proteus, we arrange the connections of both the pushbuttons and the modules to be able to use it from both serial screens. We have both the receiver and the sender. We have an image that shows us how it works on both serial screens.
 
-## Circuito con pulsadores imprementados.
+## Circuit with printed pushbuttons.
 ![bloque](Images/5.png)
 
-## Circuito con puertos serial en simulación.
+## Circuit with serial ports in simulation.
 ![bloque](Images/6.png)
 
+We have the circuit working and showing what it would look like in the series when a complete word is sent. We use the script as
+symbol for "space". Once the word is sent it restarts. In the button code “DOWN”, instead of use a "delay ()" which is a blocking function, we use a counter, the number in counterB is 10000 since the button was slower than the path
+of the same one and returned to execute another letter. That is why that is the minimum value.
 
-Tenemos al circuito funcionando y mostrando como se vería en el seria al enviarse una palabra completa. Utilizamos el guion como
-símbolo de “espacio”. Una vez que se envía la palabra se reinicia. En el código del pulsador “BAJAR”, en lugar de
-usar un “delay ()” que es una función bloqueante, utilizamos un contador, el numero en contadorB es 10000 ya que el pulsador iba mas lento que el recorrido
-del mismo y volvía a ejecutar otra letra. Es por eso que ese es el valor mínimo.
-
-## Configuración de Pulsadores.
+## Pushbutton Configuration.
 ![bloque](Images/7.png)
 
-### Arduino Maestro
-Por parte del circuito del Arduino maestro, en la “figura 16“se muestra como quedo luego de ingresar el oled que utilizaremos como interfaz y menú para el
-cliente. En el lcd que se muestra en la “figura 16” se muestra la interfaz y a medida que nosotros pulsamos los interruptores, podemos movernos entre las opciones del menú que hemos cargado con anterioridad.
+### Arduino master
+On the part of the master Arduino circuit, it is shown how it looks after entering the oled that we will use as interface and menu for the
+client. The interface is displayed on the LCD and as we press the switches, we can move between the menu options that we have loaded previously.
 
-## Ensamble completo del Arduino maestro.
+## Complete assembly of the Arduino master.
 ![bloque](Images/8nose.png)
 
-## Circuito Impreso Arduino maestro.
+## Master Arduino Printed Circuit.
 ![bloque](Images/8.png)
 
 Tenemos el circuito impreso en caso de que vayamos a montarlo o que mandemos a hacer la plaqueta pcb. También hicimos el modelaje de la plaqueta en 3D para que el usuario que arme el circuito tenga una visión mas amplia de como quedaría una vez completado. 
