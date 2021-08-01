@@ -1,4 +1,4 @@
-# Keypad.
+# Keypad ⌨️
 ## Introduction.
 This report will show and describe everything accomplished by the student Fabian
 Martinez Rincon from the Albert Thomas Technical School number 6, in the sector
